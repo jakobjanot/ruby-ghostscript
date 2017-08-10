@@ -1,5 +1,3 @@
-all:
-    true
-
-install:
-    true
+all: ; true
+clean: ; true
+install: ; true

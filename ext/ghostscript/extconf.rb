@@ -1,4 +1,5 @@
 require 'mkmf'
+require 'pathname'
 
 find_executable('make')
 
@@ -11,7 +12,8 @@ root = File.expand_path('../../..', __FILE__)
 # Normally the generated Makefile would take care of this but since we
 # don't generate one we'll have to do this manually.
 #
-File.touch(File.join(File.dirname(__FILE__), "ghostscript.#{RbConfig::CONFIG['DLEXT']}"))
+dummy_extension = File.join(File.dirname(__FILE__), "ghostscript.#{RbConfig::CONFIG['DLEXT']}")
+File.open(dummy_extension, "w") {}
 
 Dir.chdir(File.join(root, 'vendor/ghostscript-9.21')) do
   system "./configure --prefix=#{root} --disable-cups --disable-gtk --with-drivers=FILES"

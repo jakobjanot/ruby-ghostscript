@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version     = '>= 1.9.3'
   s.required_rubygems_version = ">= 1.8.11"
 
-  s.files = Dir['lib/ghostscript.rb', 'vendor/**/*']
+  s.files = Dir['lib/ghostscript.rb', 'vendor/**/*', 'ext/ghostscript/Makefile']
   s.extensions = ['ext/ghostscript/extconf.rb']
 end
