@@ -9,4 +9,4 @@ Dir.chdir(File.join(root, 'vendor/ghostscript-9.21')) do
   system "make clean"
 end
 
-create_makefile 'gs'
+create_makefile 'ghostscript'
